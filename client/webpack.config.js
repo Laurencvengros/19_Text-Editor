@@ -18,6 +18,27 @@ module.exports = () => {
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
+      new HtmlWebpackPlugin({
+        template: './index.html',
+        title: 'JATE'
+      }),
+
+      new WebpackPwaManifest({
+        name: 'Just Another Text Editor',
+        short_name: 'JATE',
+        description: 'Text Editor App',
+        backgroud_color: '#143CEF',
+        start_url: './',
+        publicPath: './',
+
+        icons: [
+          {
+          src: path.resolve('src/images/logo.png'),
+          sizes: [96, 128, 192, 256, 384],
+          destination: path.join('assets', 'icons'),
+          }
+        ]
+      })
       
     ],
 
