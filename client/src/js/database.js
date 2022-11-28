@@ -22,7 +22,15 @@ const jateDB = await openDB('jate', 1);
 //create new transaction and specify database to use and privilages
 const tx = jateDB.transaction('jate', 'readwrite');
 
+//open the object store
+const store = tx.objectStore('jate');
 
+//.add() method used to pass in and store the content
+const request = store.add({ id: 1, value: content});
+
+//confirm the request
+const result = await request;
+console.log('data successfully saved!', result);
 
 
 // TODO: Add logic for a method that gets all the content from the database
