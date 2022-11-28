@@ -23,11 +23,19 @@ module.exports = () => {
         title: 'JATE'
       }),
 
+      //to inject service worker
+      new InjectManifest({
+        swSrc: './src-sw.js',
+        swDest: 'service-worker.js'
+      }),
+
+      //to create manifest.json
       new WebpackPwaManifest({
         name: 'Just Another Text Editor',
         short_name: 'JATE',
         description: 'Text Editor App',
         backgroud_color: '#143CEF',
+        theme_color: '#143CEF',
         start_url: './',
         publicPath: './',
         inject: true,
@@ -41,16 +49,12 @@ module.exports = () => {
           },
         ],
       }),
-      new InjectManifest({
-        swSrc: './src-sw.js',
-        swDest: 'service-worker.js'
-      })
-      
     ],
 
     module: {
       rules: [
         {
+          //adding css loaders
           test: /\.css$/i,
           use: ['style-loader', 'css-loader'],
         },
@@ -58,6 +62,7 @@ module.exports = () => {
           test: /\.m?js$/,
           exclude: /node_modules/,
           use: {
+            //including babel for ES6
             loader: 'babel-loader',
             options: {
               presets: ['@babel/preset-env'],
