@@ -32,5 +32,19 @@ registerRoute(
   //defining callback function to filter the requests (css & js files) to cache
   ({request}) => ['style', 'script', 'worker'].includes(request.destination),
 
-  
+  new StaleWhileRevalidate({
+    cacheName: 'asset-cache',
+    plugins: [
+
+      //plugin to cache response headers after 30 days
+      new CacheableResponsePlugin({
+        statuses: [0, 200],
+      }),
+
+      new ExpirationPlugin({
+        maxEntries: 60,
+        maxAgeSeconds: 30 * 24 * 60 * 60
+      }),
+    ],
+  }),
 );
