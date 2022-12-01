@@ -1,7 +1,9 @@
 ## JATE: Text Editor
 
 ```
-Deployed Application: [JATE](https://pacific-thicket-62202.herokuapp.com/)
+Deployed Application:
+
+https://pacific-thicket-62202.herokuapp.com/
 ```
 
 ## Table-of-Contents
