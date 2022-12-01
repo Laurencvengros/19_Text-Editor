@@ -1,6 +1,8 @@
 ## JATE: Text Editor
 
-
+```
+Deployed Application: https://pacific-thicket-62202.herokuapp.com/
+```
 
 ## Table-of-Contents
 
@@ -19,11 +21,7 @@
 
 ## Description
 
-A text editor appliaction that runs in the browser and meets PWA criteria. JATE can function both online and offline and can be useful for saving code snippets when there is not internet connection. Click the like below to see the app deployed on Heroku: 
-
-```
-Deployed Application: https://pacific-thicket-62202.herokuapp.com/
-```
+A text editor appliaction that runs in the browser and meets PWA criteria. JATE can function both online and offline and can be useful for saving code snippets when there is not internet connection.  
 
 
 ## User Story 
@@ -56,7 +54,7 @@ JATE can be run in your borwser by using the link to the deployed application ab
 
 * The screenshot below shows what the application looks like in the browser. Navigate to the deployed application link to begin using JATE.
 
-* ![JATE](./assets/images/jate.jpg)
+ ![JATE](./assets/images/jate.jpg)
 
 
 
